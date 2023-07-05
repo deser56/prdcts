@@ -53,7 +53,7 @@ app.get('/products/:id', async (req, res) => {
   }
 });
 
-app.post('/products', async (req, res) => {
+app.post('/products', async (req, res ) => {
   const { name, price } = req.body;
   try {
     const result = await db.collection(collectionName).insertOne({
