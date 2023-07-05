@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const { MongoClient, ObjectId } = require('mongodb');
+const cors = require('cors');
 
 const connectionString = 'mongodb+srv://wanpatty168:epQJjPDJ7K45calo@cluster0.u76khmf.mongodb.net/?retryWrites=true&w=majority';
 const dbName = 'cluster0';
@@ -18,6 +19,10 @@ async function connectToDatabase() {
     console.error('Error connecting to the database:', error);
   }
 }
+
+
+// Enable CORS
+app.use(cors());
 
 app.use(express.json());
 
