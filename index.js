@@ -57,7 +57,7 @@ app.post('/products', async (req, res ) => {
     if (error) {
       throw new Error(error.message);
     }
-    res.status(201).json({ _id: data[0].id });
+    res.status(201).json({ _id: data });
   } catch (error) {
     console.error('Error creating product:', error);
     res.sendStatus(500);
